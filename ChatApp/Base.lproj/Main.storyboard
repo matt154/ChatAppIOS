@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dob-YG-Li7" userLabel="content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="311"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="251"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="X9L-pr-Nu1">
-                                                <rect key="frame" x="50" y="0.0" width="314" height="311"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="X9L-pr-Nu1">
+                                                <rect key="frame" x="50" y="0.0" width="314" height="251"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="BCg-j7-mcC">
                                                         <rect key="frame" x="0.0" y="0.0" width="314" height="31"/>
@@ -43,7 +43,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1gC-EC-nah">
-                                                        <rect key="frame" x="0.0" y="151" width="314" height="160"/>
+                                                        <rect key="frame" x="0.0" y="91" width="314" height="160"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYG-BQ-VYe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
@@ -71,6 +71,9 @@
                                                                 <rect key="frame" x="0.0" y="129" width="314" height="31"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled" title="Button" titleAlignment="center"/>
+                                                                <connections>
+                                                                    <action selector="SendMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="43V-5n-nf3"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -108,7 +111,10 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="NameTextFiled" destination="vBi-iw-NRK" id="UKP-RH-YBx"/>
+                        <outlet property="MessageTextFiled" destination="j46-bh-xaA" id="Jt5-ro-rJ4"/>
+                        <outlet property="NameTextFiled" destination="vBi-iw-NRK" id="1wo-Cl-fwP"/>
+                        <outlet property="ScrollStack" destination="X9L-pr-Nu1" id="Nwj-lB-wPu"/>
+                        <outlet property="SendButton" destination="YUV-HW-6Sq" id="Mbi-BI-bmi"/>
                         <outlet property="powerSwitch" destination="Wpp-KQ-uUe" id="FiC-bF-bc0"/>
                     </connections>
                 </viewController>
