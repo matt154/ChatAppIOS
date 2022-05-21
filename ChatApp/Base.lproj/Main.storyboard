@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dob-YG-Li7" userLabel="content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="251"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="361"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="X9L-pr-Nu1">
-                                                <rect key="frame" x="50" y="0.0" width="314" height="251"/>
+                                                <rect key="frame" x="50" y="0.0" width="314" height="361"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="BCg-j7-mcC">
                                                         <rect key="frame" x="0.0" y="0.0" width="314" height="31"/>
@@ -77,6 +77,12 @@
                                                             </button>
                                                         </subviews>
                                                     </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGc-U2-OLT">
+                                                        <rect key="frame" x="0.0" y="311" width="314" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -111,9 +117,11 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ErrorLabel" destination="BGc-U2-OLT" id="9Km-xF-f6r"/>
                         <outlet property="MessageTextFiled" destination="j46-bh-xaA" id="Jt5-ro-rJ4"/>
                         <outlet property="NameTextFiled" destination="vBi-iw-NRK" id="1wo-Cl-fwP"/>
                         <outlet property="ScrollStack" destination="X9L-pr-Nu1" id="Nwj-lB-wPu"/>
+                        <outlet property="ScrollView" destination="rx9-Hg-ZzJ" id="82J-g1-v7f"/>
                         <outlet property="SendButton" destination="YUV-HW-6Sq" id="Mbi-BI-bmi"/>
                         <outlet property="powerSwitch" destination="Wpp-KQ-uUe" id="FiC-bF-bc0"/>
                     </connections>

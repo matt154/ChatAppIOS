@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var MessageTextFiled: UITextField!
     @IBOutlet weak var SendButton: UIButton!
     @IBOutlet weak var ScrollStack: UIStackView!
+    @IBOutlet weak var ErrorLabel: UILabel!
+    @IBOutlet weak var ScrollView: UIScrollView!
+    
     
     // jenral params
     var ref: DatabaseReference!
@@ -26,7 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        
+        self.SendButton.isUserInteractionEnabled = true
         // Add listner to power value in serevr
         ref.child("power").observe(.value, with: {(snapshot) in
             if let serverPower = snapshot.value as? Bool {
@@ -79,10 +82,20 @@ class ViewController: UIViewController {
     
     
     @IBAction func SendMessage(_ sender: Any) {
-        let messageId = ref.child("messages").childByAutoId().key!
-        let message = Message.init(senderName: NameTextFiled.text ?? "", content: MessageTextFiled.text ?? "")
-        addMessageView(message: message, id: messageId)
-        ref.child("messages").childByAutoId().setValue(message.toDict())
+        let senderName = NameTextFiled.text ?? ""
+        let content = MessageTextFiled.text ?? ""
+        
+        
+        
+        if senderName != "" && content != "" {
+            let messageId = ref.child("messages").childByAutoId().key!
+            let message = Message.init(senderName: senderName, content: content)
+            addMessageView(message: message, id: messageId)
+            ref.child("messages").childByAutoId().setValue(message.toDict())
+        }
+        else{
+            ErrorLabel.text = "Can't leave filldes empty."
+        }
     }
     
     func addMessageView(message: Message, id: String) {
@@ -96,6 +109,8 @@ class ViewController: UIViewController {
             ])
         messageView.arangeTextViews()
         messagesView[id] = messageView
+        let bottomOffset = CGPoint(x: 0, y: ScrollView.contentSize.height - ScrollView.bounds.height + ScrollView.contentInset.bottom)
+        ScrollView.setContentOffset(bottomOffset, animated: true)
     }
     
     func clearMessagesView(){
